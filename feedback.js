@@ -5,7 +5,6 @@ form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const opiniao = document.getElementById('opiniao').value;
-            const pergunta = document.getElementById('pergunta').value;
             try {
                 const response = await fetch('https://api.sheetmonkey.io/form/gf9JSRcunhG6MXadKAEsdk', {
                     method: 'POST',
@@ -27,3 +26,4 @@ form.addEventListener('submit', async function (e) {
                 alert('Erro de conexão, tente novamente.');
             }
         });
+
