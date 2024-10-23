@@ -12,7 +12,7 @@ form.addEventListener('submit', async function (e) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        opiniao: opiniao,
+                        opiniao: opiniao
                     }),
                 });
 
