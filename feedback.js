@@ -14,7 +14,6 @@ form.addEventListener('submit', async function (e) {
                     },
                     body: JSON.stringify({
                         opiniao: opiniao,
-                        pergunta: pergunta
                     }),
                 });
 
