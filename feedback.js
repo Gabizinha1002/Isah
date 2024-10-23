@@ -4,17 +4,28 @@ const form = document.getElementById('opiniao-form');
 form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
-         const formData = {
-        opiniao: document.getElementById('opiniao').value,
-        pergunta: document.getElementById('pergunta').value,
-    };
+            const opiniao = document.getElementById('opiniao').value;
+            const pergunta = document.getElementById('pergunta').value;
+            try {
+                const response = await fetch('https://api.sheetmonkey.io/form/xfv8Kx1ihg6eHYj5tnAFop', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        opiniao: opiniao
+                        ṕergunta: pergunta
+                    }),
+                });
 
-    fetch('https://api.sheetmonkey.io/form/ig9CUs7w52dHRERb9qMuo3', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-});
+                if (response.ok) {
+                    document.getElementById('mensagem-sucesso').style.display = 'block';
+                    form.reset();
+                } else {
+                    alert('Ocorreu um erro ao enviar sua opinião.');
+                }
+            } catch (error) {
+                alert('Erro de conexão, tente novamente.');
+            }
+        });
 
