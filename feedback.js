@@ -13,7 +13,7 @@ form.addEventListener('submit', async function (e) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        opiniao: opiniao
+                        opiniao: opiniao,
                         ṕergunta: pergunta
                     }),
                 });
@@ -28,4 +28,3 @@ form.addEventListener('submit', async function (e) {
                 alert('Erro de conexão, tente novamente.');
             }
         });
-
